@@ -35,13 +35,6 @@ export default {
 
     const response = await fetch(endpoint, init);
     const content = await response.json();
-		
-		html_content += `You are located at: <b>${latitude},${longitude}</b>. [<a href="https://www.google.com/maps/@${latitude},${longitude}">Google Maps</a>]</p>`;
-    html_content += `<p>Based off sensor data from <a href="${content.data.city.url}">${content.data.city.name}</a>:</p>`;
-    html_content += `<p>The AQI level is: ${content.data.aqi}.</p>`;
-    html_content += `<p>The N02 level is: ${content.data.iaqi.no2?.v}.</p>`;
-    html_content += `<p>The O3 level is: ${content.data.iaqi.o3?.v}.</p>`;
-    html_content += `<p>The temperature is: ${content.data.iaqi.t?.v}°C.</p>`;
 
     let html = `
       <!DOCTYPE html>
@@ -54,11 +47,6 @@ export default {
 					body {
 							background-color: #ffffff;
 							color: #999999;
-					}
-					.panel {
-							padding: 20px;
-							margin: 20px;
-							border-radius: 0px;
 					}
 				</style>
 			</head>
@@ -75,11 +63,11 @@ export default {
 							</div>
 							<ul class="list-group list-group-flush">
 								<li class="list-group-item">You are located at: <code>${latitude},${longitude}</code> <a href="https://www.google.com/maps/@${latitude},${longitude}" target="_blank" class="btn btn-outline-dark btn-sm">Google Maps</a></li>
-								<li class="list-group-item">Based off sensor data from <code>${content.data.city.name}</code> <a href="${content.data.city.url}" target="_blank" class="btn btn-outline-dark btn-sm">Air Quality Index</a></li>
-								<li class="list-group-item">The AQI level is: <code>${content.data.aqi}</code>.</li>
-								<li class="list-group-item">The N02 level is: <code>${content.data.iaqi.no2?.v}</code>.</li>
-								<li class="list-group-item">The O3 level is: <code>${content.data.iaqi.o3?.v}.</code>.</li>
-								<li class="list-group-item">The temperature is: <code>${content.data.iaqi.t?.v}°C</code>.</li>
+								<li class="list-group-item">Based off sensor data from <code>${content.data.city.name}</code> <a href="${content.data.city.url}" target="_blank" class="btn btn-outline-dark btn-sm">World AQI Project</a></li>
+								<li class="list-group-item">The air quality index (AQI) level is: <code>${content.data.aqi}</code></li>
+								<li class="list-group-item">The nitrogen dioxidite (N02) level is: <code>${content.data.iaqi.no2?.v}</code></li>
+								<li class="list-group-item">The ozone (O3) level is: <code>${content.data.iaqi.o3?.v}</code></li>
+								<li class="list-group-item">The temperature is: <code>${content.data.iaqi.t?.v}°C</code></li>
 							</ul>
 						</div>
 					</div>
