@@ -67,9 +67,9 @@ export default {
 				<div class="container-sm">&nbsp;</div>
 				<div class="container-sm">
 					<div class="card">
-						<h5 class="card-header">Fabulab</h5>
+						<h5 class="card-header">Fabulab Demo</h5>
 						<div class="card-body">
-							<h5 class="card-title">Cloudflare Workers Demo</h5>
+							<h5 class="card-title">Air Quality Index</h5>
 							<div class="alert alert-light" role="alert">
 								<p class="card-text">This is a serverless app running on CloudFlare Workers. This is a demo using Workers geolocation data.</p>
 							</div>
