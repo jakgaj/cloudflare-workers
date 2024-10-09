@@ -14,7 +14,7 @@
 export interface Env {
   AI: Ai;
 	AI_MODEL: BaseAiTextToImageModels;
-	AI_PROMPT: string;
+	AI_PROMPT: string; // Provide prompt for AI model with env variable
 }
 
 export default {
